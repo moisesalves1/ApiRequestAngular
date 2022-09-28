@@ -26,4 +26,8 @@ export class CarroService {
     return this.httpClient.put<ICarro>(`${API_PATH}carros/${carro.id}`, carro).toPromise();
   }
 
+  delete(carroId: number){
+    return this.httpClient.delete<void>(`${API_PATH}carros/${carroId}`).toPromise();
+  }
+
 }

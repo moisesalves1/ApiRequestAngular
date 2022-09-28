@@ -31,7 +31,7 @@ export class AppComponent {
     }
 
     this.carroService.adicionar(carro)
-    .then(carro => console.log('Adicionado'))
+    .then(carro => console.log('Adicionado', carro))
     .catch(error => console.error(error));
   }
 
@@ -45,6 +45,12 @@ export class AppComponent {
     this.carroService.atualizar(carro)
     .then(carro => console.log('Atualizado', carro))
     .catch(error => console.error(error));
+  }
+  
+  remover(){
+    this.carroService.delete(8)
+    .then(res => console.log('Removido', res))
+    .catch(error => console.error(error))
   }
 
 }
